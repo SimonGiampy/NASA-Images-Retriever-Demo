@@ -1,9 +1,9 @@
 <?php
-$sampleQuery = "https://images-api.nasa.gov/search?q=etna&media_type=image";
+$query = "https://images-api.nasa.gov/search?q=".$_GET['text-search']."&media_type=image";
 
-//initialize curl request and sets the return transfer to 1 so it doesn't output it directly to the screen
+//initialize curl request and sets the returntransfer to 1 so it doesn't output it directly to the screen
 //the json output from the get request is then decoded into an associative array
-$curl = curl_init($sampleQuery);
+$curl = curl_init($query);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $json = curl_exec($curl);
 $decodedJson = json_decode($json, true);
@@ -16,8 +16,8 @@ echo "total hits: ".$totalHits."<br />";
 
 //array containing every item in the json
 $items = $decodedJson["collection"]["items"];
-//loops through each item in the set of images
-for ($i = 0; $i < $totalHits; $i++) {
+//loops through each item in the set of images, maximum of 100 elements retrieved in first page
+for ($i = 0; $i < 100; $i++) {
     //title
     $title = $items[$i]["data"][0]["title"];
     echo "title ".$i.": ".$title."<br />";
@@ -26,8 +26,15 @@ for ($i = 0; $i < $totalHits; $i++) {
     $description = $items[$i]["data"][0]["description"];
     echo "description ".$i.": ".$description."<br />";
 
+    //date of upload
+    $date = $items[$i]["data"][0]["date_created"];
+    $date = substr($date, 0, 10);
+    $date = date("d m Y", strtotime($date));
+    echo "date of upload ".$i.": ".$date."<br />";
+
     //keywords
     $keywords = $items[$i]["data"][0];
+    echo "keywords ".$i.": ";
     if (array_key_exists("keywords", $keywords)) {
         $keywords = $keywords["keywords"];
     }
@@ -43,5 +50,6 @@ for ($i = 0; $i < $totalHits; $i++) {
 }
 echo "</p>";
 
+//// TODO: add link to next page for results
 //close curl request
 curl_close($curl);
