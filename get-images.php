@@ -14,7 +14,9 @@ echo "<p>";
 $totalHits = $decodedJson["collection"]["metadata"]["total_hits"];
 echo "total hits: ".$totalHits."<br />";
 
+//array containing every item in the json
 $items = $decodedJson["collection"]["items"];
+//loops through each item in the set of images
 for ($i = 0; $i < $totalHits; $i++) {
     //title
     $title = $items[$i]["data"][0]["title"];
@@ -40,5 +42,6 @@ for ($i = 0; $i < $totalHits; $i++) {
     echo "preview image link ".$i.": ".$previewImage."<br />";
 }
 echo "</p>";
+
 //close curl request
 curl_close($curl);
