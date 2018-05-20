@@ -1,4 +1,8 @@
 <?php
+// TODO: add link to next page for results, adding page=2 to the parameters of the query
+
+
+
 $query = "https://images-api.nasa.gov/search?q=".$_GET['text-search']."&media_type=image";
 
 //initialize curl request and sets the returntransfer to 1 so it doesn't output it directly to the screen
@@ -50,12 +54,11 @@ for ($i = 0; $i < $maxNumber; $i++) {
 
     //href image thumb / original
     $previewImage = $items[$i]["links"][0]["href"];
-    //$previewImage = str_replace("thumb", "orig", $previewImage);
+    //$previewImage = str_replace("thumb", "orig", $previewImage);  //replace last occurrence in thumb (actually is not necessary, images's names are acronyms)
     echo "preview image link ".$i.": ".$previewImage."<br />";
 }
 echo "</p>";
 
-//// TODO: add link to next page for results, adding page=2 to the parameters of the query
 
 //closes curl request and finishes
 curl_close($curl);
