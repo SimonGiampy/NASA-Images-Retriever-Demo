@@ -17,7 +17,12 @@ echo "total hits: ".$totalHits."<br />";
 //array containing every item in the json
 $items = $decodedJson["collection"]["items"];
 //loops through each item in the set of images, maximum of 100 elements retrieved in first page
-for ($i = 0; $i < 100; $i++) {
+$maxNumber = 100;
+//checks if the total number of results is less than 100 (the maximum quantity of images that can be shown in the first page)
+if ($totalHits < 100) {
+    $maxNumber = $totalHits;
+}
+for ($i = 0; $i < $maxNumber; $i++) {
     //title
     $title = $items[$i]["data"][0]["title"];
     echo "title ".$i.": ".$title."<br />";
@@ -50,6 +55,7 @@ for ($i = 0; $i < 100; $i++) {
 }
 echo "</p>";
 
-//// TODO: add link to next page for results
-//close curl request
+//// TODO: add link to next page for results, adding page=2 to the parameters of the query
+
+//closes curl request and finishes
 curl_close($curl);
