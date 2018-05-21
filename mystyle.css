@@ -1,0 +1,11 @@
+/*changes the number of columns displayed*/
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+.test {
+	background-color: #f57094;
+	text-align: right;
+}

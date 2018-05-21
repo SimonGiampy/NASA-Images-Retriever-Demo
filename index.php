@@ -1,92 +1,222 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
 
-	<title>NASA API</title>
-</head>
-<body>
+		<title>NASA API</title>
+	</head>
 
-	<!--add container to the entire screen, with margins and paggings-->
+	<body>
+		<!--add container to the entire screen, with margins and paddings-->
+		<!-- might use container class to organize better the content -->
+		<form method="get" name="query" action="get-images.php">
+			<input type="text" name="text-search" autofocus required/>
+			<input type="submit" name="search" value="Search" />
+		</form>
+		<br />
 
-	<form method="get" name="query" action="get-images.php">
-		<input type="text" name="text-search" autofocus required/>
-		<input type="submit" name="search" value="Search" />
-	</form>
-	<br />
+		<p class="test">example text in teteg
+		</p>
 
+		<div class="card-columns">
+			<div class="card">
+				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
+				<div class="card-body">
+					<h5 class="card-title">Image title</h5>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
 
-	<p>example text in paragraph
-	</p>
+			<div class="card bg-primary text-white text-center p-3">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+					<footer class="blockquote-footer">
+						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
+			</div>
+			<div class="card p-3 text-right">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+					<footer class="blockquote-footer">
+						<small class="text-muted"> Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
+				<div class="card-body">
+					<h5 class="card-title">Image title</h5>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
 
-	<div class="card-columns">
-		<div class="card">
-			<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
-			<div class="card-body">
-				<h5 class="card-title">Image title</h5>
+			<div class="card bg-primary text-white text-center p-3">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+					<footer class="blockquote-footer">
+						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
+			</div>
+			<div class="card p-3 text-right">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+					<footer class="blockquote-footer">
+						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
+				<div class="card-body">
+					<h5 class="card-title">Image title</h5>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
+
+			<div class="card bg-primary text-white text-center p-3">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+					<footer class="blockquote-footer">
+						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
+			</div>
+			<div class="card p-3 text-right">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+					<footer class="blockquote-footer">
+						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
+				<div class="card-body">
+					<h5 class="card-title">Image title</h5>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+				</div>
+			</div>
+
+			<div class="card bg-primary text-white text-center p-3">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+					<footer class="blockquote-footer">
+						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
+			</div>
+			<div class="card p-3 text-right">
+				<blockquote class="blockquote mb-0">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+					<footer class="blockquote-footer">
+						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
+					</footer>
+				</blockquote>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
 			</div>
 		</div>
-		<div class="card">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-			</div>
-		</div>
-
-		<div class="card bg-primary text-white text-center p-3">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-      <footer class="blockquote-footer">
-        <small>
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~orig.jpg" alt="Card image">
-  </div>
-  <div class="card p-3 text-right">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-
-	</div>
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-	crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="myscript.js"></script>
 
-	<script src="myscript.js"></script>
-</body>
+	</body>
+
 </html>
 <!--
 when the search is finished, the website has to dynamically create a responsive grid of images, adjusting the height based on the image, while the width is already set

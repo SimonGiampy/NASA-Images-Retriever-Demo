@@ -2,7 +2,6 @@
 // TODO: add link to next page for results, adding page=2 to the parameters of the query
 
 
-
 $query = "https://images-api.nasa.gov/search?q=".$_GET['text-search']."&media_type=image";
 
 //initialize curl request and sets the returntransfer to 1 so it doesn't output it directly to the screen
