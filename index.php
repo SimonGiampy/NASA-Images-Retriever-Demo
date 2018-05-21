@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<!--
+when the form is submitted, it calls the get-images script (php or js). then it has do send data (in some way) to the javascript, which then puts the data in the web page
+
+first way: use ajax (AJAX = Asynchronous JavaScript And XML) to send a request with php data, then js receives it
+
+another way is to call directly the javascript with the function "onsubmit" through the form. then there are 2 possibilities
+	1 replace get request with javascript code that does the same work as php
+	2 call the php code through js, and then retrieve the result with echoing directly to a js variable
+
+https://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript
+https://stackoverflow.com/questions/247483/http-get-request-in-javascript
+https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call
+https://stackoverflow.com/questions/15757750/how-can-i-call-php-functions-by-javascript
+look at the stored web pages in edge for details
+-->
+
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -12,7 +29,7 @@
 
 	<body>
 		<!--add container to the entire screen, with margins and paddings-->
-		<!-- might use container class to organize better the content -->
+		<!-- might use container class to better organize the content -->
 		<form method="get" name="query" action="get-images.php">
 			<input type="text" name="text-search" autofocus required/>
 			<input type="submit" name="search" value="Search" />
@@ -35,178 +52,10 @@
 					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 				</div>
 			</div>
+		</div>
 
-			<div class="card bg-primary text-white text-center p-3">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-					<footer class="blockquote-footer">
-						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card text-center">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
-			</div>
-			<div class="card p-3 text-right">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					<footer class="blockquote-footer">
-						<small class="text-muted"> Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
-				<div class="card-body">
-					<h5 class="card-title">Image title</h5>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
+		<div id="dom-target" style="display: none;">
 
-			<div class="card bg-primary text-white text-center p-3">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-					<footer class="blockquote-footer">
-						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card text-center">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
-			</div>
-			<div class="card p-3 text-right">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					<footer class="blockquote-footer">
-						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
-				<div class="card-body">
-					<h5 class="card-title">Image title</h5>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
-
-			<div class="card bg-primary text-white text-center p-3">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-					<footer class="blockquote-footer">
-						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card text-center">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
-			</div>
-			<div class="card p-3 text-right">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					<footer class="blockquote-footer">
-						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
-				<div class="card-body">
-					<h5 class="card-title">Image title</h5>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
-
-			<div class="card bg-primary text-white text-center p-3">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-					<footer class="blockquote-footer">
-						<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card text-center">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img" src="https://images-assets.nasa.gov/image/PIA20602/PIA20602~thumb.jpg" alt="Card image">
-			</div>
-			<div class="card p-3 text-right">
-				<blockquote class="blockquote mb-0">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					<footer class="blockquote-footer">
-						<small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
-					</footer>
-				</blockquote>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
 		</div>
 
 
@@ -214,7 +63,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 		<script src="myscript.js"></script>
-
 	</body>
 
 </html>

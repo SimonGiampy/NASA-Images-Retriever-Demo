@@ -11,11 +11,11 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $json = curl_exec($curl);
 $decodedJson = json_decode($json, true);
 
-echo "<p>";
+//echo "<p>";
 
 //returns total number of results
 $totalHits = $decodedJson["collection"]["metadata"]["total_hits"];
-echo "total hits: ".$totalHits."<br />";
+//echo "total hits: ".$totalHits."<br />";
 
 //array containing every item in the json
 $items = $decodedJson["collection"]["items"];
@@ -28,36 +28,35 @@ if ($totalHits < 100) {
 for ($i = 0; $i < $maxNumber; $i++) {
     //title
     $title = $items[$i]["data"][0]["title"];
-    echo "title ".$i.": ".$title."<br />";
+    //echo "title ".$i.": ".$title."<br />";
 
     //description
     $description = $items[$i]["data"][0]["description"];
-    echo "description ".$i.": ".$description."<br />";
+    //echo "description ".$i.": ".$description."<br />";
 
     //date of upload
     $date = $items[$i]["data"][0]["date_created"];
     $date = substr($date, 0, 10);
     $date = date("d m Y", strtotime($date));
-    echo "date of upload ".$i.": ".$date."<br />";
+    //echo "date of upload ".$i.": ".$date."<br />";
 
     //keywords
     $keywords = $items[$i]["data"][0];
-    echo "keywords ".$i.": ";
+    //echo "keywords ".$i.": ";
     if (array_key_exists("keywords", $keywords)) {
         $keywords = $keywords["keywords"];
     }
     foreach ($keywords as $keyword) {
         echo $keyword." ";
     }
-    echo "<br />";
+    //echo "<br />";
 
     //href image thumb / original
     $previewImage = $items[$i]["links"][0]["href"];
     //$previewImage = str_replace("thumb", "orig", $previewImage);  //replace last occurrence in thumb (actually is not necessary, images's names are acronyms)
-    echo "preview image link ".$i.": ".$previewImage."<br />";
+    //echo "preview image link ".$i.": ".$previewImage."<br />";
 }
-echo "</p>";
-
+//echo "</p>";
 
 //closes curl request and finishes
 curl_close($curl);
