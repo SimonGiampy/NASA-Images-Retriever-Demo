@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <!--
-when the form is submitted, it calls the get-images script (php or js). then it has do send data (in some way) to the javascript, which then puts the data in the web page
+when the form is submitted, it calls the get-images script. then it has do send data (in some way) to the javascript, which then puts the data in the web page using jQuery
+use ajax (AJAX = Asynchronous JavaScript And XML) to send a request from the js file when the form is submitted
+the php script, after computing the result, sends in some way data to the js file, which uses them to chage the contents of the page
 
-first way: use ajax (AJAX = Asynchronous JavaScript And XML) to send a request with php data, then js receives it
-
-another way is to call directly the javascript with the function "onsubmit" through the form. then there are 2 possibilities
-	1 replace get request with javascript code that does the same work as php
-	2 call the php code through js, and then retrieve the result with echoing directly to a js variable
-
+useful links:
 https://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript
-https://stackoverflow.com/questions/247483/http-get-request-in-javascript
 https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call
-https://stackoverflow.com/questions/15757750/how-can-i-call-php-functions-by-javascript
 look at the stored web pages in edge for details
 -->
 
@@ -29,14 +24,14 @@ look at the stored web pages in edge for details
 
 	<body>
 		<!--add container to the entire screen, with margins and paddings-->
-		<!-- might use container class to better organize the content -->
-		<form method="get" name="query" action="get-images.php">
+		<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
+		 <form method="get" name="query" onsubmit="return callPhp()">
 			<input type="text" name="text-search" autofocus required/>
 			<input type="submit" name="search" value="Search" />
 		</form>
 		<br />
 
-		<p class="test">example text in teteg
+		<p class="test">example text
 		</p>
 
 		<div class="card-columns">
@@ -52,10 +47,6 @@ look at the stored web pages in edge for details
 					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 				</div>
 			</div>
-		</div>
-
-		<div id="dom-target" style="display: none;">
-
 		</div>
 
 

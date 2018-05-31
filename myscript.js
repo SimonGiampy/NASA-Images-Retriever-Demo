@@ -14,25 +14,22 @@ $(document).ready(function() {
 		}
 	});
 
+
 });
 
-/*
-<script>
-    function reqListener () {
-      console.log(this.responseText);
-    }
+function callPhp() {
+	//create xmlHttpRequest to call the php server script
+	var xHttp = new XMLHttpRequest();
+	//when the response is ready from the server it sends a log message
+	xHttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log("triggered");
+		}
+	};
+	//send request to php file, with random key to avoid cached file
+	xHttp.open("GET", "get-images.php?t=" + Math.random(), true);
+	xHttp.send();
 
-    var oReq = new XMLHttpRequest(); //New request object
-    oReq.onload = function() {
-        //This is where you handle what to do with the response.
-        //The actual data is found on this.responseText
-        alert(this.responseText); //Will alert: 42
-    };
-    oReq.open("get", "get-data.php", true);
-    //                               ^ Don't block the rest of the execution.
-    //                                 Don't wait until the request finishes to
-    //                                 continue.
-    oReq.send();
-</script>
-
-*/
+	//don't know why but it's needed in order to work
+	return false;
+};
