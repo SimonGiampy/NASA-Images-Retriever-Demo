@@ -10,9 +10,7 @@ https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-a
 look at the stored web pages in edge for details
 -->
 
-
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,15 +26,16 @@ look at the stored web pages in edge for details
 		<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
 		<p>
 			<form method="get" name="query" onsubmit="return callPhp()">
-				<input type="text" name="text-search" autofocus required/>
-				<input type="submit" name="search" value="Search" />
+				<input type="text" name="text-search" id="text-search" autofocus required/>
+				<input type="submit" name="search" value="request through php, 1 method" />
 			</form>
 		</p>
 
 		<p>
+			<!-- this form sends the input to the unique_script.js which is just a test -->
 			<form method="get" name="query2" onsubmit="return doEverything()">
-				<input type="text" name="text-search2" autofocus required/>
-				<input type="submit" name="search2" value="fai quello che ti pare" />
+				<input type="text" name="text-search2" id="text-search2" autofocus required/>
+				<input type="submit" name="search2" value="direct js request" />
 			</form>
 		</p>
 

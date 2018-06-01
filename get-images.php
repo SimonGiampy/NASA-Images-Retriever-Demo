@@ -22,11 +22,11 @@ $maxNumber = 100;
 if ($totalHits < 100) {
     $maxNumber = $totalHits;
 }
-
+//list of images to be sent to js
 $list = array($maxNumber);
 
 for ($i = 0; $i < $maxNumber; $i++) {
-    //href image thumb / original
+    //href image thumb | original
     $previewImage = $items[$i]["links"][0]["href"];
     //$previewImage = str_replace("thumb", "orig", $previewImage);  //replace last occurrence in thumb (actually is not necessary, images's names are acronyms)
     //echo "preview image link ".$i.": ".$previewImage."<br />";
@@ -35,12 +35,13 @@ for ($i = 0; $i < $maxNumber; $i++) {
 
     $list[$i] = array($previewImage, $nasaId);
 }
+//encodes data in a multi-dimensional array so js can parse it
 echo json_encode($list);
 //closes curl request and finishes
 curl_close($curl);
 
 
-
+//example of relevant data to be acquired from the json
 /*title
 $title = $items[$i]["data"][0]["title"];
 //echo "title ".$i.": ".$title."<br />";
