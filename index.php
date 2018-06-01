@@ -12,6 +12,7 @@ look at the stored web pages in edge for details
 
 
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,11 +26,19 @@ look at the stored web pages in edge for details
 	<body>
 		<!--add container to the entire screen, with margins and paddings-->
 		<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
-		 <form method="get" name="query" onsubmit="return callPhp()">
-			<input type="text" name="text-search" autofocus required/>
-			<input type="submit" name="search" value="Search" />
-		</form>
-		<br />
+		<p>
+			<form method="get" name="query" onsubmit="return callPhp()">
+				<input type="text" name="text-search" autofocus required/>
+				<input type="submit" name="search" value="Search" />
+			</form>
+		</p>
+
+		<p>
+			<form method="get" name="query2" onsubmit="return doEverything()">
+				<input type="text" name="text-search2" autofocus required/>
+				<input type="submit" name="search2" value="fai quello che ti pare" />
+			</form>
+		</p>
 
 		<p class="test">example text
 		</p>
@@ -54,6 +63,7 @@ look at the stored web pages in edge for details
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 		<script src="myscript.js"></script>
+		<script src="unique_script.js"></script>
 	</body>
 
 </html>
