@@ -26,47 +26,49 @@ if ($totalHits < 100) {
 $list = array($maxNumber);
 
 for ($i = 0; $i < $maxNumber; $i++) {
-    //href image thumb | original
+    //gets from the json just the necessary values to be passed to the JavaScript file
     $previewImage = $items[$i]["links"][0]["href"];
-    //$previewImage = str_replace("thumb", "orig", $previewImage);  //replace last occurrence in thumb (actually is not necessary, images's names are acronyms)
-    //echo "preview image link ".$i.": ".$previewImage."<br />";
-
     $nasaId = $items[$i]["data"][0]["nasa_id"];
+    $title = $items[$i]["data"][0]["title"];
 
-    $list[$i] = array($previewImage, $nasaId);
+    $list[$i] = array("link"=>$previewImage, "id"=>$nasaId, "title"=>$title);
 }
-//encodes data in a multi-dimensional array so js can parse it
+//encodes data in a multi-dimensional array so js receives it with the AJAX request and then it processes it
 echo json_encode($list);
-//closes curl request and finishes
+
+//closes curl request and finishes execution
 curl_close($curl);
 
 
-//example of relevant data to be acquired from the json
-/*title
+/*example of relevant data to be acquired from the json. useless code for the moment
+
+title
 $title = $items[$i]["data"][0]["title"];
-//echo "title ".$i.": ".$title."<br />";
-*/
+echo "title ".$i.": ".$title."<br />";
 
-/*description
+description
 $description = $items[$i]["data"][0]["description"];
-//echo "description ".$i.": ".$description."<br />";
-*/
+echo "description ".$i.": ".$description."<br />";
 
-/*date of upload
+href image thumb | original
+$previewImage = $items[$i]["links"][0]["href"];
+$previewImage = str_replace("thumb", "orig", $previewImage);
+echo "preview image link ".$i.": ".$previewImage."<br />";
+
+date of upload
 $date = $items[$i]["data"][0]["date_created"];
 $date = substr($date, 0, 10);
 $date = date("d m Y", strtotime($date));
-//echo "date of upload ".$i.": ".$date."<br />";
-*/
+echo "date of upload ".$i.": ".$date."<br />";
 
-/*keywords
+keywords
 $keywords = $items[$i]["data"][0];
-//echo "keywords ".$i.": ";
+echo "keywords ".$i.": ";
 if (array_key_exists("keywords", $keywords)) {
     $keywords = $keywords["keywords"];
 }
 foreach ($keywords as $keyword) {
     echo $keyword." ";
 }
-//echo "<br />";
+echo "<br />";
 */

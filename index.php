@@ -11,6 +11,7 @@ look at the stored web pages in edge for details
 -->
 
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,47 +23,26 @@ look at the stored web pages in edge for details
 	</head>
 
 	<body>
-		<!--add container to the entire screen, with margins and paddings-->
-		<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
-		<p>
+		<div class="container">
+			<!--add container to the entire screen, with margins and paddings-->
+			<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
+
 			<form method="get" name="query" onsubmit="return callPhp()">
 				<input type="text" name="text-search" id="text-search" autofocus required/>
-				<input type="submit" name="search" value="request through php, 1 method" />
+				<input type="submit" name="search" value="Search" />
 			</form>
-		</p>
 
-		<p>
-			<!-- this form sends the input to the unique_script.js which is just a test -->
-			<form method="get" name="query2" onsubmit="return doEverything()">
-				<input type="text" name="text-search2" id="text-search2" autofocus required/>
-				<input type="submit" name="search2" value="direct js request" />
-			</form>
-		</p>
+			<p class="test">example text</p>
 
-		<p class="test">example text
-		</p>
-
-		<div class="card-columns">
-			<div class="card">
-				<img class="card-img-top" src="https://images-assets.nasa.gov/image/PIA01971/PIA01971~thumb.jpg" />
-				<div class="card-body">
-					<h5 class="card-title">Image title</h5>
-				</div>
+			<div class="card-columns" id="columns">
+				<!-- here jquery adds all the elements in the myscript.js file -->
 			</div>
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
+
 		</div>
-
-
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 		<script src="myscript.js"></script>
-		<script src="unique_script.js"></script>
 	</body>
 
 </html>
