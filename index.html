@@ -23,18 +23,21 @@ look at the stored web pages in edge for details
 	</head>
 
 	<body>
-		<div class="container">
+		<div class="container p-3">
 			<!--add container to the entire screen, with margins and paddings-->
 			<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
+			<div class="justify-content-center form-inline">
+				<form method="get" name="query" onsubmit="return callPhp()">
+					<input type="text" name="text-search" id="text-search" class="form-control mx-2" placeholder="Immagine da cercare" autofocus required/>
+					<input type="submit" name="search" value="Search" class="btn btn-primary mx-2" />
+				</form>
+			</div>
 
-			<form method="get" name="query" onsubmit="return callPhp()">
-				<input type="text" name="text-search" id="text-search" autofocus required/>
-				<input type="submit" name="search" value="Search" />
-			</form>
+			<p class="par" id="result">
+				Risultati trovati: 0
+			</p>
 
-			<p class="test">example text</p>
-
-			<div class="card-columns" id="columns">
+			<div class="card-columns my-4 mx-2" id="columns">
 				<!-- here jquery adds all the elements in the myscript.js file -->
 			</div>
 

@@ -6,6 +6,13 @@
     }
 }
 
-.test {
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
 
+.par {
+	font-size: 1.2em;
+	font-weight: bold;
 }

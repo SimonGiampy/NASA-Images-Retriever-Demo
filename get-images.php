@@ -24,8 +24,8 @@ if ($totalHits < 100) {
 }
 //list of images to be sent to js
 $list = array($maxNumber);
-
-for ($i = 0; $i < $maxNumber; $i++) {
+$list[0] = $totalHits;
+for ($i = 1; $i < $maxNumber; $i++) {
     //gets from the json just the necessary values to be passed to the JavaScript file
     $previewImage = $items[$i]["links"][0]["href"];
     $nasaId = $items[$i]["data"][0]["nasa_id"];
