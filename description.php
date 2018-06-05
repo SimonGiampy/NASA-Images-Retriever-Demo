@@ -10,16 +10,31 @@
 		<title>NASA Description</title>
 	</head>
 
-	<body>
+	<body class="Description">
 
-		<p id="id">
-			<script>
-				//fix this shit right here
-				var id = <?php echo $_GET["id"]; ?>;
-				$("#id").text(id);
-			</script>
+		<div id="nasa-id" class="d-none">
+			<?php echo $_GET["id"]; ?>
+		</div>
 
-		</p>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<img id="preview" src="" />
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<div class="jumbotron jumbotron-fluid">
+						<div class="container">
+							<h1 class="display-5" id="title">Hello, world!</h1>
+							<p class="lead" id="description">This is a simple hero unit.</p>
+							<p class="lead" id="date">This is a simple hero unit.</p>
+							<p class="lead" id="preview">This is a simple hero unit.</p>
+							<p class="lead" id="keywords">This is a simple hero unit.</p>
+							<p class="lead" id="orig-link">This is a simple hero unit.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

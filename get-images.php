@@ -1,6 +1,5 @@
 <?php
 // TODO: add link to next page for results, adding page=2 to the parameters of the query
-
 $query = "https://images-api.nasa.gov/search?q=".$_GET['query']."&media_type=image";
 
 //initialize curl request and sets the returntransfer to 1 so it doesn't output it directly to the screen
@@ -38,37 +37,3 @@ echo json_encode($list);
 
 //closes curl request and finishes execution
 curl_close($curl);
-
-
-/*example of relevant data to be acquired from the json. useless code for the moment
-
-title
-$title = $items[$i]["data"][0]["title"];
-echo "title ".$i.": ".$title."<br />";
-
-description
-$description = $items[$i]["data"][0]["description"];
-echo "description ".$i.": ".$description."<br />";
-
-href image thumb | original
-$previewImage = $items[$i]["links"][0]["href"];
-$previewImage = str_replace("thumb", "orig", $previewImage);
-echo "preview image link ".$i.": ".$previewImage."<br />";
-
-date of upload
-$date = $items[$i]["data"][0]["date_created"];
-$date = substr($date, 0, 10);
-$date = date("d m Y", strtotime($date));
-echo "date of upload ".$i.": ".$date."<br />";
-
-keywords
-$keywords = $items[$i]["data"][0];
-echo "keywords ".$i.": ";
-if (array_key_exists("keywords", $keywords)) {
-    $keywords = $keywords["keywords"];
-}
-foreach ($keywords as $keyword) {
-    echo $keyword." ";
-}
-echo "<br />";
-*/

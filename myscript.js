@@ -1,6 +1,24 @@
 $(document).ready(function() {
 	//press ctrl+f5 to refresh the page and apply the changes, or use incognito mode to debug javascript, or else disable caching in the browser advanced options
 	$("#result").toggle();
+	if ($("body").hasClass("Description")) {
+		var nasa_id = $("#nasa-id").val();
+
+		var xhttp2 = new XMLHttpRequest();
+		xhttp2.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var json = JSON.parse(this.responseText);
+				$("#title").text(json[0]);
+				$("#description").text(json[1]);
+				$("#date").text(json[2]);
+				$("#preview").css("src", json[3]);
+				$("#keywords").text(json[4]);
+				$("#orig-link").text(json[5]);
+			}
+		}
+		xhttp2.open("GET", "get-description.php?id=" + nasa_id);
+		http2.send();
+	}
 });
 
 function callPhp() {
