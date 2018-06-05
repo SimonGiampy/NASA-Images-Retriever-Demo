@@ -23,6 +23,7 @@ $date = date("d m Y", strtotime($date));
 $variables[2] = $date;
 //3: preview
 $previewImage = $items["links"][0]["href"];
+$variables[3] = $previewImage;
 //4: keywords
 $keywordsArray = $items["data"][0];
 $keywordsList = "";

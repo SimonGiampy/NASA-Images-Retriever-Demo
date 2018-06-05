@@ -24,12 +24,12 @@
 				<div class="col-md-6 col-sm-12">
 					<div class="jumbotron jumbotron-fluid">
 						<div class="container">
-							<h1 class="display-5" id="title">Hello, world!</h1>
-							<p class="lead" id="description">This is a simple hero unit.</p>
-							<p class="lead" id="date">This is a simple hero unit.</p>
-							<p class="lead" id="preview">This is a simple hero unit.</p>
-							<p class="lead" id="keywords">This is a simple hero unit.</p>
-							<p class="lead" id="orig-link">This is a simple hero unit.</p>
+							<h1 class="display-5" id="title"></h1>
+							<p class="lead" id="description"></p>
+							<p class="lead" id="date"></p>
+							<p class="lead" id="preview"></p>
+							<p class="lead" id="keywords"></p>
+							<p class="lead" id="orig-link"></p>
 						</div>
 					</div>
 				</div>

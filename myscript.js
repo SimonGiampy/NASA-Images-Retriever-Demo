@@ -2,8 +2,8 @@ $(document).ready(function() {
 	//press ctrl+f5 to refresh the page and apply the changes, or use incognito mode to debug javascript, or else disable caching in the browser advanced options
 	$("#result").toggle();
 	if ($("body").hasClass("Description")) {
-		var nasa_id = $("#nasa-id").val();
-
+		var nasa_id = $("#nasa-id").text();
+		console.log(nasa_id);
 		var xhttp2 = new XMLHttpRequest();
 		xhttp2.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -11,13 +11,13 @@ $(document).ready(function() {
 				$("#title").text(json[0]);
 				$("#description").text(json[1]);
 				$("#date").text(json[2]);
-				$("#preview").css("src", json[3]);
+				$("#preview").attr("src", json[3]);
 				$("#keywords").text(json[4]);
 				$("#orig-link").text(json[5]);
 			}
 		}
 		xhttp2.open("GET", "get-description.php?id=" + nasa_id);
-		http2.send();
+		xhttp2.send();
 	}
 });
 
@@ -30,9 +30,9 @@ function callPhp() {
 		if (this.readyState == 4 && this.status == 200) {
 			//it adds to the div card-columns tag all the cards representing the images
 			//createImageCards calls the function (sending as a parameter the responseText from the php script) and receives all the html to be added to the page
-			var json = JSON.parse(this.responseText);
-			$("#result").toggle().text("Risultati trovati: " + json[0]);
-			$("#columns").append(createImageCards(json));
+			var json2 = JSON.parse(this.responseText);
+			$("#result").toggle().text("Risultati trovati: " + json2[0]);
+			$("#columns").append(createImageCards(json2));
 		}
 	};
 	//send request to php file, with the value inserted in the text field
