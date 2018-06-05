@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,20 +16,21 @@
 			<?php echo $_GET["id"]; ?>
 		</div>
 
-		<div class="container">
+		<div class="container p-3">
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
 					<img id="preview" src="" />
 				</div>
+				<!-- better visualization -->
 				<div class="col-md-6 col-sm-12">
-					<div class="jumbotron jumbotron-fluid">
+					<div class="jumbotron">
 						<div class="container">
 							<h1 class="display-5" id="title"></h1>
 							<p class="lead" id="description"></p>
 							<p class="lead" id="date"></p>
 							<p class="lead" id="preview"></p>
 							<p class="lead" id="keywords"></p>
-							<p class="lead" id="orig-link"></p>
+							<a class="lead" href="" id="orig-link">Visualizza immagine originale</a>
 						</div>
 					</div>
 				</div>

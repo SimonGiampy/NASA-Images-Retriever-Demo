@@ -8,12 +8,12 @@ $(document).ready(function() {
 		xhttp2.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				var json = JSON.parse(this.responseText);
-				$("#title").text(json[0]);
+				$("#title").text(json[0]); //chage text representation
 				$("#description").text(json[1]);
-				$("#date").text(json[2]);
+				$("#date").text("Data di creazione: " + json[2]);
 				$("#preview").attr("src", json[3]);
 				$("#keywords").text(json[4]);
-				$("#orig-link").text(json[5]);
+				$("#orig-link").attr("href", json[5]); //create a href link
 			}
 		}
 		xhttp2.open("GET", "get-description.php?id=" + nasa_id);

@@ -31,7 +31,10 @@ if (array_key_exists("keywords", $keywordsArray)) {
     $keywordsArray = $keywordsArray["keywords"];
     $keywordsList = "Parole chiave: ";
     foreach ($keywordsArray as $keyword) {
-        $keywordsList = $keywordsList.$keyword." ";
+        $keywordsList = $keywordsList.$keyword;
+        if (!(next($keywordsArray) === false)) {
+            $keywordsList = $keywordsList.", ";
+        }
     }
 }
 $variables[4] = $keywordsList;
