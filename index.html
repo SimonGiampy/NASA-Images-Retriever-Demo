@@ -3,11 +3,6 @@
 when the form is submitted, it calls the get-images script. then it has do send data (in some way) to the javascript, which then puts the data in the web page using jQuery
 use ajax (AJAX = Asynchronous JavaScript And XML) to send a request from the js file when the form is submitted
 the php script, after computing the result, sends in some way data to the js file, which uses them to chage the contents of the page
-
-useful links:
-https://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript
-https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call
-look at the stored web pages in edge for details
 -->
 
 <html>
@@ -24,8 +19,6 @@ look at the stored web pages in edge for details
 
 	<body>
 		<div class="container p-3">
-			<!--add container to the entire screen, with margins and paddings-->
-			<!-- action="get-images.php" it isn't used because the php script is called from the js script. return callPhp is the js function to be called-->
 			<div class="justify-content-center form-inline">
 				<form method="get" name="query" onsubmit="return callPhp()">
 					<input type="text" name="text-search" id="text-search" class="form-control mx-2" placeholder="Immagine da cercare" autofocus required/>
@@ -56,14 +49,8 @@ first the website fetches the 100 images (just image link and title), then it cr
 each image can be contained in a bootstrap card (and order them in columns): <div class="card-columns"><div class="card"><img class="card-img" /></div></div>
 	this way each image is in a card (with the image on the top and the description at the body of the card)
 	card-columns class puts the images in cards which vary the height but not the width. the columns are ordered from top to bottom, and then from left to right
-	when it has shown all images that fill the screen up, it stops from loading more of them. the page waits for a scroll to load more images at the bottom (infinite scroll)
-another method to add images is to use Masonry library, which uses jquery or js and css to do this task in an easier way
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	when it has shown all images that fill the screen up, it stops from loading more of them
 
-clicking on a image results to head the user to another page, where the details about it are shown
-	implement a way to pass data through the details page, which fetches all the relevant data about that single image and displays them
-
-add infinite scroll which stops when it has already shown the 100 images
-then it prompts the link to the next page (adding page=2 to the query of results)
+clicking on a image results in heading the user to another page, where the details about it are shown
 
 -->
