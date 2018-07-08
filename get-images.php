@@ -1,5 +1,5 @@
 <?php
-// TODO: add link to next page for results, adding page=2 to the parameters of the query
+// query to be processed in roder to search the images
 $query = "https://images-api.nasa.gov/search?q=".$_GET['query']."&media_type=image";
 
 //initialize curl request and sets the returntransfer to 1 so it doesn't output it directly to the screen
@@ -10,7 +10,6 @@ $json = curl_exec($curl);
 $decodedJson = json_decode($json, true);
 
 //returns total number of results
-// TODO: handle 0 as hits, or bad requests
 $totalHits = $decodedJson["collection"]["metadata"]["total_hits"];
 
 //array containing every item in the json
