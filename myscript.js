@@ -1,21 +1,23 @@
+/*this function if called when the web page is initially shown*/
 $(document).ready(function() {
-	//press ctrl+f5 to refresh the page and apply the changes, or use incognito mode to debug javascript, or else disable caching in the browser advanced options
 	$("#result").toggle();
 	if ($("body").hasClass("Description")) {
+		/*here it sets the content of the web page of the description of the image chosen. it puts all the retrieved data from get-description.php script*/
 		var nasa_id = $("#nasa-id").text();
 		console.log(nasa_id);
 		var xhttp2 = new XMLHttpRequest();
 		xhttp2.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				var json = JSON.parse(this.responseText);
-				$("#title").text(json[0]); //chage text representation
+				$("#title").text(json[0]); 
 				$("#description").text(json[1]);
 				$("#date").text("Data di creazione: " + json[2]);
-				$("#preview").attr("src", json[3]);
-				$("#keywords").text(json[4]);
-				$("#orig-link").attr("href", json[5]); //create a href link
+				$("#preview").attr("src", json[3]); //image preview link source
+				$("#keywords").text(json[4]); //key words
+				$("#orig-link").attr("href", json[5]); //creates a href link to the original image
 			}
 		}
+		/*it asks the php script to retrieve all the necessary info about the chosen image*/
 		xhttp2.open("GET", "get-description.php?id=" + nasa_id);
 		xhttp2.send();
 	}
@@ -56,7 +58,7 @@ function createImageCards(data) {
 	}
 	return html;
 };
-
+/*this function clears the page when a new search is starting to be performed*/
 function clearPage() {
 	$("#result").hide();
 	$("#columns").html("");
