@@ -1,5 +1,4 @@
 /*changes the number of columns displayed*/
-/* TODO: change min width value after setting up the page content and container */
 @media (min-width: 576px) {
     .card-columns {
         column-count: 4;
